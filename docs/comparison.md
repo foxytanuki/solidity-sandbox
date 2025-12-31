@@ -133,9 +133,28 @@ forge install OpenZeppelin/openzeppelin-contracts
 - 🎯 Building protocol-level or security-focused projects
 - 🎯 Prefer single-binary with no Node.js dependency
 
-### Hybrid Approach
+## Project Setup Patterns
 
-Many projects use **both**:
+### Pattern 1: Single Tool (Recommended for Most Projects)
+
+Most projects use either Hardhat or Foundry alone. Both tools are self-sufficient.
+
+| Tool | Coverage |
+|------|----------|
+| **Foundry** | Tests, fuzz testing, deployment (`forge script`), verification, local node (`anvil`) — all native |
+| **Hardhat** | Tests, deployment (Ignition), verification, frontend integration (ethers.js/TypeChain) — all via plugins |
+
+```
+project/
+├── contracts/
+├── test/
+├── scripts/
+└── hardhat.config.ts   # OR foundry.toml
+```
+
+### Pattern 2: Hybrid (Both Tools)
+
+Some large-scale projects use both tools together for specialized use cases.
 
 ```
 project/
@@ -147,20 +166,10 @@ project/
 └── foundry.toml
 ```
 
-**Why hybrid?**
-- Foundry for fast unit tests and fuzzing
-- Hardhat for integration tests and deployment
-- Best of both worlds
-
-## Performance Benchmarks
-
-*Note: Results vary by project size and complexity*
-
-| Operation | Hardhat | Foundry | Difference |
-|-----------|---------|---------|------------|
-| Compile (100 contracts) | ~30s | ~3s | ~10x faster |
-| Test Suite (1000 tests) | ~60s | ~10s | ~6x faster |
-| Fork Mainnet | ~5s | ~2s | ~2.5x faster |
+**When to consider hybrid:**
+- Large team with mixed tool preferences
+- Need both Foundry's fast fuzzing and Hardhat's JS integration
+- Migrating from one tool to another
 
 ## Migration
 
