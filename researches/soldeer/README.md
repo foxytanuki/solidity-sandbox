@@ -60,3 +60,8 @@ A minimal ERC20 token with:
 | `test_Approve_And_TransferFrom` | ERC20 approval flow works |
 | `test_ImplementsInterface` | Interface compatibility |
 
+## Init Logs
+
+1. `foundryup`
+2. `forge soldeer init`
+3. `forge soldeer install @openzeppelin-contracts~5.5.0`
