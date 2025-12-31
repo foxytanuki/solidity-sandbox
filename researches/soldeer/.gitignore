@@ -1,0 +1,13 @@
+# Compiler output
+cache/
+out/
+
+# Dependencies (managed by soldeer)
+dependencies/
+
+# IDE
+.cursor/
+
+# Misc
+.DS_Store
+
