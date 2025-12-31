@@ -1,8 +1,10 @@
 import hardhatToolboxViemPlugin from "@nomicfoundation/hardhat-toolbox-viem";
 import { configVariable, defineConfig } from "hardhat/config";
 
+import tasksPlugin from "./plugins/tasks/index.js";
+
 export default defineConfig({
-  plugins: [hardhatToolboxViemPlugin],
+  plugins: [hardhatToolboxViemPlugin, tasksPlugin],
   solidity: {
     profiles: {
       default: {

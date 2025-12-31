@@ -12,8 +12,32 @@ This example project includes:
 - Foundry-compatible Solidity unit tests.
 - TypeScript integration tests using [`node:test`](nodejs.org/api/test.html), the new Node.js native test runner, and [`viem`](https://viem.sh/).
 - Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+- Custom tasks demonstrating how to create Hardhat 3 tasks.
 
 ## Usage
+
+### Running Custom Tasks
+
+This project includes several custom tasks:
+
+```shell
+# Simple greeting task
+pnpm exec hardhat hello
+pnpm exec hardhat hello --name "World"
+
+# List all accounts
+pnpm exec hardhat accounts
+pnpm exec hardhat accounts --network sepolia
+
+# Show ETH balance of an address
+pnpm exec hardhat balance 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+
+# Show block information (latest block)
+pnpm exec hardhat block
+
+# Show block information for a specific block number
+pnpm exec hardhat block --blockNumber 0
+```
 
 ### Running Tests
 
