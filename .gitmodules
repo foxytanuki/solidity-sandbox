@@ -1,0 +1,3 @@
+[submodule "submodules/soldeer"]
+	path = submodules/soldeer
+	url = https://github.com/mario-eth/soldeer
